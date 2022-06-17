@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In/Sign Up</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="headerSection"></div> <!-- HEADER -->
+    <!-- SIGN IN /SIGN UP CONTAINER -->
+    <div id="accountContainer">
+        <!-- --------------------SIGN UP----------------- -->
+        <div id="signUpForm">
+            <h2>Create Account</h2>
+            <div class="container">
+                <label for="uname"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" id="signUpId" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" id="signUpPswd" required>
+                <label for="psw"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" id="rptPswd" required>
+                <button type="button" id="createAcBtn">Create Account</button>
+            </div>
+        </div>
+
+        <div style="width: 0px; border: solid 1px #d9d9d9;"></div>
+
+        <!-- --------------------SIGN IN------------------------------ -->
+        <div id="signInForm">
+            <h2>Sign In</h2>
+            <div class="container">
+                <label for="uname"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" id="loginId" required>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" id="loginPswd" required>
+                <button type="button" id="signInBtn">Sign In</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="footerSection"></div> <!-- FOOTER -->
+</body>
+</html>
+<script>
+    document.querySelector("#createAcBtn").addEventListener("click", signUp);
+    document.querySelector("#signInBtn").addEventListener("click", login);
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    function signUp() {
+        let signUpId = document.querySelector("#signUpId").value;
+        let signUpPswd = document.querySelector("#signUpPswd").value;
+        let rptPswd = document.querySelector("#rptPswd").value;
+        if(signUpPswd != rptPswd) {
+            alert("Passwords don't match");
+        } else if(signUpId == "" || signUpPswd == "" || rptPswd == "s") {
+            alert("Kindly fill all the details")
+        } else {
+            let obj = new createAc(signUpId, signUpPswd);
+            users.push(obj);
+            localStorage.setItem("users", JSON.stringify(users));
+            console.log(users);
+            document.querySelector("#signUpId").value = "";
+            document.querySelector("#signUpPswd").value = "";
+            document.querySelector("#rptPswd").value = "";
+            alert("Hi! "+ signUpId + ". Your account has been created successfully.")
+        }
+    }
+
+    function login() {
+        let loginId = document.querySelector("#loginId").value;
+        let loginPswd = document.querySelector("#loginPswd").value;
+        if(loginId == "" || loginPswd == "") {
+            alert("Kindly enter the login credentials.")
+        } else {
+        for(var i = 0; i < users.length; i++) {
+            if(users[i].id == loginId) {
+                if(users[i].pswd == loginPswd) {
+                    localStorage.setItem("loggedUser", JSON.stringify(users[i].id));
+                    alert("Login successful");
+                    window.location.href = "/index.html";
+                    break;
+                } else {
+                    alert("Invalid credentials");
+                    break;
+                }
+            }
+        }
+        if(i == users.length) {
+            alert("There is no account in the entered mail id")
+        }
+    }
+    }
+
+    function logOut() {
+        localStorage.removeItem("loggedUser"); 
+    }
+
+    function createAc(id, pswd) {
+        this.id = id,
+        this.pswd = pswd
+    }
+</script>
+
+
+<!-- HEADER AND FOOTER IMPORT -->
+<script type="module">
+    import {header, footer} from './components/header.js'
+    document.querySelector("#headerSection").innerHTML = header();
+    document.querySelector("#footerSection").innerHTML = footer();
+</script>

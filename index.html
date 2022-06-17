@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overstock Home</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- slider -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- slider ends -->
+    <script>
+        let loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+        console.log(loggedUser);
+        document.querySelector("#loggedUser").innerHTML = loggedUser;
+
+    </script>
+
+</head>
+<body>
+    <!------------------------------------ HEADER ------------------------------------------>
+    <div id="headerSection"></div>
+    <!------------------------------------BODY-------------------------------------------------->
+    <div class="mainBgImg" id="img1">
+        <a><img src="https://ak1.ostkcdn.com/img/mxc/05302022-HP-A1-INTL-1400x550.svg" class="mainImg"></a>
+    </div>
+
+    <h2>Limited-Time Deals</h2>
+    <div class="ltdDeals">
+        <div><img src="https://ak1.ostkcdn.com/img/mxc/05302022_HB_DOMESTIC_1_20_off.svg?imwidth=1920" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="https://ak1.ostkcdn.com/img/mxc/06062022_HB_DOMESTIC_2_pt_3.svg?imwidth=1920" class="cards">
+            <h3>Select Living Room furniture</h3>
+        </div>
+        <div><img src="https://ak1.ostkcdn.com/img/mxc/06062022_HB_DOMESTIC_3_pt_3.svg?imwidth=1920" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="https://ak1.ostkcdn.com/img/mxc/06102022_HB_DOMESTIC_6.svg?imwidth=1920" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="https://ak1.ostkcdn.com/img/mxc/06062022_HB_DOMESTIC_5_pt_3.svg?imwidth=1920" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="https://ak1.ostkcdn.com/img/mxc/05302022_HB_DOMESTIC_6.svg?imwidth=1920" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+    </div>
+
+    <div class="mainBgImg" id="img2">
+        <a><img src="https://ak1.ostkcdn.com/img/mxc/05302022_BedroomFurniture_Desktopv2.svg" class="mainImg"></a>
+    </div>
+
+    <h2>Fresh Finds in each category</h2>
+    <div class="ltdDeals wrpdCntnt">
+        <div><img src="/images/freshFindsInEachCategory/1.webp" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="/images/freshFindsInEachCategory/2.webp" class="cards">
+            <h3>Select Living Room furniture</h3>
+        </div>
+        <div><img src="/images/freshFindsInEachCategory/3.webp" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="/images/freshFindsInEachCategory/4.webp" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="/images/freshFindsInEachCategory/5.webp" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="/images/freshFindsInEachCategory/6.webp" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+    </div>
+    <div class="ltdDeals wrpdCntnt">
+        <div><img src="/images/freshFindsInEachCategory/7.webp" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="/images/freshFindsInEachCategory/8.webp" class="cards">
+            <h3>Select Living Room furniture</h3>
+        </div>
+        <div><img src="/images/freshFindsInEachCategory/9.webp" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="/images/freshFindsInEachCategory/10.webp" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="/images/freshFindsInEachCategory/11.webp" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+        <div><img src="/images/freshFindsInEachCategory/12.webp" class="cards">
+            <h3>Select Rugs</h3>
+        </div>
+    </div>
+
+    <h2>New Ways to Bring Home Spring</h2>
+    <!-- IMAGE SLIDER -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+    
+          <div class="swiper-slide">
+            <img src="/images/slider/1.webp">
+            <h3>Leather Sanctionals</h3>
+            <p>Update your living room with the sumptuous style and homegrown of leather</p>
+          </div>
+          
+          <div class="swiper-slide">
+            <img src="/images/slider/2.webp">
+            <h3>Leather Sanctionals</h3>
+            <p>Update your living room with the sumptuous style and homegrown of leather</p>
+          </div>
+    
+            <div class="swiper-slide">
+              <img src="/images/slider/3.webp">
+              <h3>Leather Sanctionals</h3>
+            <p>Update your living room with the sumptuous style and homegrown of leather</p>
+            </div>
+    
+            <div class="swiper-slide">
+              <img src="/images/slider/4.webp">
+              <h3>Leather Sanctionals</h3>
+            <p>Update your living room with the sumptuous style and homegrown of leather</p>
+            </div>
+            
+            <div class="swiper-slide">
+              <img src="/images/slider/5.webp">
+              <h3>Leather Sanctionals</h3>
+            <p>Update your living room with the sumptuous style and homegrown of leather</p>
+            </div>
+            
+            <div class="swiper-slide">
+              <img src="/images/slider/6.webp">
+              <h3>Leather Sanctionals</h3>
+            <p>Update your living room with the sumptuous style and homegrown of leather</p>
+            </div>
+            
+            <div class="swiper-slide">
+              <img src="/images/slider/7.webp">
+              <h3>Leather Sanctionals</h3>
+            <p>Update your living room with the sumptuous style and homegrown of leather</p>
+            </div>
+    
+            <div class="swiper-slide">
+              <img src="/images/slider/8.webp">
+              <h3>Leather Sanctionals</h3>
+            <p>Update your living room with the sumptuous style and homegrown of leather</p>
+            </div>
+    
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    <!-- SLIDER CODE ENDS HERE -->
+
+    <!-- FOOTER -->
+    <div id="footerSection"></div>
+    <!-- FOOTER ENDS HERE -->
+
+
+</body>
+</html>
+<script type="module">
+    import {header, footer} from './components/header.js'
+    document.querySelector("#headerSection").innerHTML = header();
+    document.querySelector("#footerSection").innerHTML = footer();
+
+</script>
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+slidesPerView:4,
+spaceBetween:30,
+slidesPerGroup: 3,
+loop: false,
+loopFillGroupWithBlank: true,
+pagination: {
+  el: ".swiper-pagination",
+  clickable: true,
+},
+navigation: {
+  nextEl: ".swiper-button-next",
+  prevEl: ".swiper-button-prev",
+},
+});
+</script>
+
